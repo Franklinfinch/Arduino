@@ -9,10 +9,7 @@ test -d cores/esp8266
 test -d libraries
 
 #all="cores/esp8266 libraries"
-all="
-libraries/ESP8266mDNS
-cores/esp8266/core_esp8266_si2c.cpp
-"
+all="libraries/ESP8266mDNS"
 
 for d in $all; do
     for e in c cpp h; do
@@ -29,4 +26,3 @@ for d in libraries; do
             --suffix=none \
             --options=${org}/astyle_examples.conf {} \;
 done
-

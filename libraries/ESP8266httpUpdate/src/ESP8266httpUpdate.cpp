@@ -389,11 +389,7 @@ HTTPUpdateResult ESP8266HTTPUpdate::handleUpdate(HTTPClient& http, const String&
                     DEBUG_HTTP_UPDATE("[httpUpdate] Update ok\n");
                     http.end();
 
-#ifdef ATOMIC_FS_UPDATE
-                    if(_rebootOnUpdate) {
-#else
                     if(_rebootOnUpdate && !spiffs) {
-#endif
                         ESP.restart();
                     }
 
